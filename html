@@ -74,6 +74,15 @@
     		padding:17px 20px 0 20px;
     		float:left;
     	}
+        
+        #topmenudiv li a { 
+            text-decoration : none; /* remove underline from nav links */
+            color: #fff; /* set color to white */	
+    	}
+        
+          #topmenudiv li a:hover { 
+            text-decoration : underline; /* add underline to nav links on hover */   	
+    	}
     	
     	#searchdiv {
     		float:left;
@@ -84,22 +93,21 @@
   			height:30px;
     		background-image:url("images/magnify.png");
     		background-repeat:no-repeat;
-    		background-position:right center;
-    		
+    		background-position:right center;	
     	}
     	
-    	.break {
-    		clear:both;
+    	.break::after {
+            content: "";
+            display: table;
+            clear: both;
     	}
 		
 		#newsbar {
     		background-color:#990000;
     		width:100%;
-    		height:80px;
+    		height:90px; /* Changed height from 80px to 90px, as per Robs video */
     		color:white;
-    		margin-top:-2px;
-    		
-    		
+    		margin-top:-2px;	
     	}
     	
     	#newsbar p {
@@ -138,26 +146,26 @@
 	
 		<div id="topbar">
 		
-			<div class="fixedwidth">
+			<div class="fixedwidth break"> <!-- added class break to parent div to stop parent collapsing when children are floated. Just ad break class to any parent whose children you float. -->
 			
                         <div id="logodiv">
                         	<img src="images/bbclogo.png" />
                         </div>
                         
                         <div id="signindiv">
-                        	<p>	<img src="images/signin.png" /> Sign In </p>
+                        	<p><img src="images/signin.png" />Sign In</p>
                         </div>
                         
                         <div id="topmenudiv">
                         
-                        	<ul>
-                        		<li>News</li>
-                        		<li>Sports</li>
-                        		<li>Weather</li>
-                        		<li>iPlayer</li>
-                        		<li>TV</li>
-                        		<li>Radio</li>
-                        		<li>More...</li>
+                        	<ul><!-- added links to menu items -->
+                        		<li><a href="#">News</a></li>
+                        		<li><a href="#">Sports</a></li>
+                        		<li><a href="#">Weather</a></li>
+                        		<li><a href="#">iPlayer</a></li>
+                        		<li><a href="#">TV</a></li>
+                        		<li><a href="#">Radio</a></li>
+                        		<li><a href="#">More...</a></li>
                         	</ul>
                         
                         </div>
@@ -168,7 +176,7 @@
                         	
 			</div>
 			
-			<div class="break"></div>
+			<!-- removed the <div class="break"> as it is an outdated method cof clearing floats</div> -->
 			
 			<div id="newsbar">
 		
